@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Component } from "react"
+import { Box, Button, Flex} from "@chakra-ui/react"
 
 export default class Main extends Component {
     constructor(props) {
@@ -28,31 +29,64 @@ export default class Main extends Component {
 
     render(){
         return (
-            <main >
-                <div class="conteiner_poke">
+            <Flex
+            p= "10px 0"
+            w="70vw"
+            backgroundSize="contain"
+            backgroundRepeat="repeat"
+            direction="column"
+            gap="10px"
+            m="auto"
+            >
+                <Flex  
+                    mg="auto"
+                    direction= "column"
+                    gap="2"
+                >
                     {  
                         this.state.pokemons.map((poke)=>{
-                                return <div class="poke_name" key={poke.name}>{poke.name}</div>
+                                return <Box 
+                                            display=" inline-block"
+                                            border="1px solid #ff3800"
+                                            p="5"
+                                            bg=" rgb(252, 252, 252)"
+                                            borderRadius="5"
+                                            font-weight="700"
+                                            text-transform="capitalize" 
+                                            color="gray.600"
+                                            key={poke.name}>
+                                                {poke.name}
+                                        </Box>
                         })
                     }
-                </div>
-                <div class="conteiner_nav">
-                    <button 
+                </Flex>
+                <Flex justify="space-between">
+                    <Button 
+                    color="white"
+                    bg= "#ff3700cb"
+                    border="1px solid #af717183"
+                    casing="uppercase"
+                    cursor="pointer"
                     onClick={ ()=>{
                         this.goToPage(this.state.previous);
                     } }>
                             anterior
-                    </button>
-                    <button
+                    </Button>
+                    <Button
+                        color="white"
+                        bg= "#ff3700cb"
+                        border="1px solid #af717183"
+                        casing="uppercase"
+                        cursor="pointer"
                         onClick={ ()=>{
                             
                             this.goToPage(this.state.next);
                         } }>
                             proximo
-                    </button>
-                </div>
+                    </Button>
+                </Flex>
               
-            </ main >
+            </ Flex >
         )
     }
     
