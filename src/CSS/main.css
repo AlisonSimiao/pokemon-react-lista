@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #aa9f9f;
+}
+
+header{
+    color: white;
+    background: #ff3800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 0;
+    font-size: 1.5rem;
+}
+
+main{
+    padding: 10px 0;
+    width: 70vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.conteiner_poke{
+    width: 70vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.conteiner_nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    color: white;
+    background-color: #ff3700cb;
+    border: 1px solid #af717183;
+    padding: .5rem .7rem;
+    border-radius: .5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #ff37009a;
+    border: 1px solid #e90909;
+}
+
+.poke_name{
+    display: inline-block;
+    border: 1px solid #ff3800;
+    padding: 20px 1rem;
+    background-color: rgb(252, 252, 252);
+    border-radius: .5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+@media only screen and (max-width: 600px) {
+    .conteiner_poke{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .poke_name{
+        width: 30%;
+        height: 30%;
+        text-align: center;
+    }
+}
